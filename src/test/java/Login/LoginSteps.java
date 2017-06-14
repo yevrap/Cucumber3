@@ -11,18 +11,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-/**
- * Created by Yev on 6/13/2017.
- */
 public class LoginSteps {
-    WebDriver driver;
+    private WebDriver driver;
 
-    String baseURL = "https://thetracktor.com/account/login/";
-    String loggedInURL = "https://thetracktor.com/account/profile/";
+    private String baseURL = "https://thetracktor.com/account/login/";
+    private String loggedInURL = "https://thetracktor.com/account/profile/";
 
-    String correctUsername = "yevster";
-    String correctPassword = "green3000";
-    String wrongCredential = "wrong";
+    private String correctUsername = "yevster";
+    private String correctPassword = "green3000";
+    private String wrongCredential = "wrong";
 
     @Before public void setUp(){
         ChromeDriverManager.getInstance().setup();
