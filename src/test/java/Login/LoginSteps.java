@@ -56,11 +56,6 @@ public class LoginSteps {
 
     // Unsuccessful login
 
-    @Given("^user is on login page$")
-    public void userIsOnLoginPage() throws Throwable {
-        driver.navigate().to(baseURL);
-    }
-
     @When("^entering the wrong credentials$")
     public void enteringTheWrongCredentials() throws Throwable {
         driver.findElement(By.id("id_username")).sendKeys(wrongCredential);
