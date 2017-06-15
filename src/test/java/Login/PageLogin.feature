@@ -5,9 +5,14 @@ Feature: Page Login
     Given user is on the login page
 
   Scenario: Page login with correct credentials
-    When entering the correct username and password
+    When entering the correct username "yevster" and password "green3000"
     Then the user is able to login
 
-  Scenario: Page login with wrong credentials
-    When entering the wrong credentials
+  Scenario Outline: Page login with wrong credentials
+    When entering the wrong credentials for username "<username>" or password "<password>"
     Then the user is not able to login
+    Examples:
+    |username|password|
+    |yevster |wrongPass|
+    |wrongLogin|green3000|
+    |wrongLogin|wrongPass|

@@ -1,5 +1,6 @@
 package Login;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -16,10 +17,6 @@ public class LoginSteps {
 
     private String baseURL = "https://thetracktor.com/account/login/";
     private String loggedInURL = "https://thetracktor.com/account/profile/";
-
-    private String correctUsername = "yevster";
-    private String correctPassword = "green3000";
-    private String wrongCredential = "wrong";
 
     @Before public void setUp(){
         ChromeDriverManager.getInstance().setup();
@@ -38,10 +35,10 @@ public class LoginSteps {
 
     }
 
-    @When("^entering the correct username and password$")
-    public void enteringTheCorrectUsernameAndPassword() throws Throwable {
-        driver.findElement(By.id("id_username")).sendKeys(correctUsername);
-        driver.findElement(By.id("id_password")).sendKeys(correctPassword);
+    @When("^entering the correct username \"([^\"]*)\" and password \"([^\"]*)\"$")
+    public void enteringTheCorrectUsernameAndPassword(String arg0, String arg1) throws Throwable {
+        driver.findElement(By.id("id_username")).sendKeys(arg0);
+        driver.findElement(By.id("id_password")).sendKeys(arg1);
         driver.findElement(By.id("submit-id-submit")).click();
     }
 
@@ -56,10 +53,10 @@ public class LoginSteps {
 
     // Unsuccessful login
 
-    @When("^entering the wrong credentials$")
-    public void enteringTheWrongCredentials() throws Throwable {
-        driver.findElement(By.id("id_username")).sendKeys(wrongCredential);
-        driver.findElement(By.id("id_password")).sendKeys(wrongCredential);
+    @When("^entering the wrong credentials for username \"([^\"]*)\" or password \"([^\"]*)\"$")
+    public void enteringTheWrongCredentialsForOr(String arg0, String arg1) throws Throwable {
+        driver.findElement(By.id("id_username")).sendKeys(arg0);
+        driver.findElement(By.id("id_password")).sendKeys(arg1);
         driver.findElement(By.id("submit-id-submit")).click();
     }
 
