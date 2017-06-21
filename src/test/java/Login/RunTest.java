@@ -26,4 +26,4 @@ import com.github.mkolisnyk.cucumber.runner.ExtendedCucumberOptions;
         glue = { "Login" }
         )
 
-public class runTest { }
+public class RunTest { }
