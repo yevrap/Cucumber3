@@ -14,7 +14,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 
-public class LoginSteps {
+public class LoginStepdefs {
 
     private WebDriver driver;
 

@@ -19,11 +19,12 @@ import com.github.mkolisnyk.cucumber.runner.ExtendedCucumberOptions;
         toPDF = true,
         outputFolder = "${user.dir}/DATE(dd-MM-yyyy)"
         )
-@CucumberOptions(plugin = { "html:target/cucumber-html-report",
+@CucumberOptions(plugin = {
+        "html:target/cucumber-html-report",
         "json:target/cucumber.json", "pretty:target/cucumber-pretty.txt",
         "usage:target/cucumber-usage.json", "junit:target/cucumber-results.xml" },
-        features = "src/test/java/Login",
+        features = "src/test/java/Login/PageLogin.feature",
         glue = { "Login" }
         )
 
-public class RunTest { }
+public class RunCukesTest { }
